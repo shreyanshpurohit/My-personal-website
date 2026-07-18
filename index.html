@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreyansh Purohit</title>
+  <meta
+    name="description"
+    content="Shreyansh Purohit — builder, breaker, fixer. Personal site for the messy first drafts and the things that survived them."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background canvas (constellation particles) -->
+  <canvas id="constellations" aria-hidden="true"></canvas>
+
+  <!-- Background grid + grain -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div id="cursor" aria-hidden="true">
+    <span class="cursor-dot"></span>
+    <span class="cursor-ring"></span>
+  </div>
+
+  <!-- Nav -->
+  <nav id="nav" class="nav">
+    <a href="#top" class="nav-logo" data-hover>
+      <span class="nav-logo-bracket">[</span>SP<span class="nav-logo-bracket">]</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about" data-hover>[ About ]</a>
+      <a href="#projects" data-hover>[ Projects ]</a>
+      <a href="#stack" data-hover>[ Stack ]</a>
+    </div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="#about" data-hover>[ About ]</a>
+    <a href="#projects" data-hover>[ Projects ]</a>
+    <a href="#stack" data-hover>[ Stack ]</a>
+  </div>
+
+  <!-- Hero / Intro -->
+  <header id="top" class="hero">
+    <div class="hero-overlay">
+      <div class="hero-tag reveal">
+        <span>MY PORTFOLIO SITE</span>
+      </div>
+
+      <h1 class="hero-name reveal">
+        SHREYANSH<br />
+        <span class="hero-name-dim">PUROHIT</span>
+      </h1>
+
+      <div class="hero-divider reveal"></div>
+
+      <p class="hero-tagline reveal">
+        <span id="typewriter" class="typewriter"></span><span class="type-cursor">_</span>
+      </p>
+
+      <div class="hero-scroll reveal" aria-hidden="true">
+        <span>Scroll in</span>
+        <span class="hero-scroll-arrow">↓</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro spacer pushes content below the zoom -->
+  <div class="hero-spacer" aria-hidden="true"></div>
+
+  <main class="page-shift">
+    <!-- About / Field notes -->
+    <section id="about" class="section section-about">
+      <div class="section-label reveal">
+        <span class="section-rule"></span>
+        <span>// FIELD_NOTES · WHO I AM</span>
+      </div>
+
+      <h2 class="section-title reveal">
+        ABOUT<br /><span class="dim">THE_BUILD</span>
+      </h2>
+
+      <div class="about-grid">
+        <div class="about-meta reveal">
+          <p class="about-meter">[ 01_I_AM ]</p>
+        </div>
+        <div class="about-body reveal">
+          <p class="lede">
+            I build things. Then they break. Then I build them again — usually better.
+            Hardware, software, games, cursed prototypes, the kind of folder nobody asks for.
+            I do it because the first version is the only version that teaches you anything.
+          </p>
+          <p class="lede">
+            I am part of <em class="tag-inline tag-hack">HackHive</em> at Adarsh Public School.
+          </p>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats reveal">
+        <div class="stat"><span class="stat-value">∞</span><span class="stat-label">Broken Builds</span></div>
+        <div class="stat"><span class="stat-value">2026</span><span class="stat-label">Started Shipping</span></div>
+        <div class="stat"><span class="stat-value">100%</span><span class="stat-label">Self-Taught</span></div>
+        <div class="stat"><span class="stat-value">0</span><span class="stat-label">Spectator Mode</span></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-projects">
+      <div class="section-label reveal">
+        <span class="section-rule"></span>
+        <span>// ARCHIVE · SHIPPED_WORK</span>
+      </div>
+      <h2 class="section-title reveal">
+        STUFF<br /><span class="dim">I_MADE</span>
+      </h2>
+      <p class="section-sub reveal">// not concepts. not coursework. things that exist.</p>
+
+      <div class="projects-grid">
+        <!-- Cards injected by script.js -->
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="section section-stack">
+      <div class="section-label reveal">
+        <span class="section-rule"></span>
+        <span>// TOOLBELT · WHAT_I_USE</span>
+      </div>
+      <h2 class="section-title reveal">
+        THE<br /><span class="dim">TOOLBELT</span>
+      </h2>
+
+      <div class="stack-grid reveal">
+        <div class="stack-group">
+          <h3 class="stack-h">[ LANGUAGES ]</h3>
+          <ul class="stack-list">
+            <li>Python</li>
+            <li>Rust</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>C / C++</li>
+            <li>HTML · CSS</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <h3 class="stack-h">[ FRAMEWORKS ]</h3>
+          <ul class="stack-list">
+            <li>React</li>
+            <li>Tailwind</li>
+            <li>Node</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <h3 class="stack-h">[ HARDWARE ]</h3>
+          <ul class="stack-list">
+            <li>Arduino</li>
+            <li>ESP32</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <h3 class="stack-h">[ TOOLS ]</h3>
+          <ul class="stack-list">
+            <li>Git</li>
+            <li>Linux</li>
+            <li>Neovim</li>
+            <li>Godot</li>
+            <li>Fusion 360</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / Now playing -->
+    <section id="now" class="section section-now">
+      <div class="section-label reveal">
+        <span class="section-rule"></span>
+        <span>// NOTES · THINGS PEOPLE ASK</span>
+      </div>
+      <h2 class="section-title reveal">
+        QUESTIONS_<span class="dim">I_GET</span>
+      </h2>
+
+      <div class="faq-list">
+        <div class="faq-item reveal" data-index="0">
+          <button class="faq-q" data-hover>
+            <span>[ 01 ] WHAT ARE YOU?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            A student. A builder. A vice president of HackHive. I show up with strange ideas,
+            ship the ugly first version, and leave with something that works a little better than
+            it did yesterday.
+          </div></div>
+        </div>
+
+        <div class="faq-item reveal" data-index="1">
+          <button class="faq-q" data-hover>
+            <span>[ 02 ] DO YOU TAKE AI-GENERATED CODE?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            As a power tool, not an autopilot. I read what it ships, I fix what breaks, and I can
+            explain the build without hiding behind a prompt.
+          </div></div>
+        </div>
+
+        <div class="faq-item reveal" data-index="2">
+          <button class="faq-q" data-hover>
+            <span>[ 03 ] DO I NEED TO BE AN EXPERT?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            No. Experts are just beginners with a longer failure history.
+          </div></div>
+        </div>
+
+        <div class="faq-item reveal" data-index="3">
+          <button class="faq-q" data-hover>
+            <span>[ 04 ] HOW MUCH DOES IT COST?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Nothing if it is for learning. Curiosity is the entry fee; whatever you make is the
+            receipt.
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-name">SHREYANSH PUROHIT</div>
+          <div class="footer-meta">
+            <span>&copy; <span id="year"></span> SHREYANSH_PUROHIT </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

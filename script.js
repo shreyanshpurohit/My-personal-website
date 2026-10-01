@@ -1,16 +1,9 @@
-/* ============================================================
-   Shreyansh Purohit — personal site
-   Vanilla JS: original hero zoom, interactive motion, projects, FAQ, menu.
-   ============================================================ */
-
 (() => {
   "use strict";
 
-  // ─── Year stamp ────────────────────────────────────────────
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // ─── Project data ──────────────────────────────────────────
   const PROJECTS = [
     {
       title: "HackHive",
@@ -110,7 +103,6 @@
       faqs.forEach((other) => setFaq(other, other === item && open));
     });
   });
-  // ─── Hero scroll zoom (HackHive-style) ────────────────────
   const hero = document.querySelector(".hero");
   const heroOverlay = document.querySelector(".hero-overlay");
   const heroSpacer = document.querySelector(".hero-spacer");
@@ -122,13 +114,12 @@
       const y = window.scrollY;
       const limit = scrollLimit();
       const t = Math.min(1, y / (limit * 0.8));
-      const scale = 1 + t * 24;          // zoom in
-      const opacity = 1 - Math.max(0, (t - 0.3) / 0.7); // fade after 30%
+      const scale = 1 + t * 24;
+      const opacity = 1 - Math.max(0, (t - 0.3) / 0.7);
       heroOverlay.style.transform = `scale(${scale.toFixed(3)})`;
       heroOverlay.style.opacity = opacity.toFixed(3);
 
       if (y > limit) {
-        // Keep its height so the sections below do not jump during scrolling.
         hero.style.visibility = "hidden";
       } else {
         hero.style.visibility = "";
@@ -189,7 +180,6 @@
     document.querySelectorAll("main .reveal, .project-card, .stack-group").forEach((target) => revealObserver.observe(target));
   }
 
-  // Navigation progress is independent of the unchanged hero scroll handler.
   let scrollFrame = 0;
   const updateNav = () => {
     scrollFrame = 0;
@@ -316,7 +306,6 @@
   motionPreference.addEventListener("change", syncMotion);
   syncMotion();
 
-  // ─── Smooth-scroll anchor handling for nav links ──────────
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href");

@@ -1,4 +1,3 @@
-/* Shreyansh Purohit — a light, editorial portfolio. */
 :root { --bg: #fafaf8; --surface: #fff; --fg: #20211f; --muted: #62645f; --line: #dedfd9; --accent: #3c5141; --font-sans: "Space Grotesk", sans-serif; --max-w: 1120px; --ease-out: cubic-bezier(.16, 1, .3, 1); }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -30,7 +29,7 @@ ul { list-style: none; }
 .mobile-menu.open a { opacity: 1; transform: none; transition-delay: .1s; }
 .mobile-menu.open a:nth-child(2) { transition-delay: .16s; }
 .mobile-menu.open a:nth-child(3) { transition-delay: .22s; }
-/* Original hero geometry and transform origin are preserved below. */
+
 .hero-name { font-size: clamp(2.7rem, 8.3vw, 6rem); font-weight: 600; line-height: 1.02; letter-spacing: -.04em; position: relative; perspective: 800px; }
 .hero-letter { display: inline-block; }
 .hero-name-dim, .dim { color: var(--muted); }
@@ -139,5 +138,5 @@ ul { list-style: none; }
   position: relative;
   z-index: 10;
   background: var(--bg);
-  transform: none !important; /* disable js parallax */
+  transform: none !important;
 }

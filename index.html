@@ -11,55 +11,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Background canvas (constellation particles) -->
-  <canvas id="constellations" aria-hidden="true"></canvas>
-
-  <!-- Background grid + grain -->
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-grain" aria-hidden="true"></div>
-
-  <!-- Custom cursor -->
-  <div id="cursor" aria-hidden="true">
-    <span class="cursor-dot"></span>
-    <span class="cursor-ring"></span>
-  </div>
-
   <!-- Nav -->
   <nav id="nav" class="nav">
     <a href="#top" class="nav-logo" data-hover>
       <span class="nav-logo-bracket">[</span>SP<span class="nav-logo-bracket">]</span>
     </a>
     <div class="nav-links">
-      <a href="#about" data-hover>[ About ]</a>
-      <a href="#projects" data-hover>[ Projects ]</a>
-      <a href="#stack" data-hover>[ Stack ]</a>
+      <a href="#about" data-hover>About</a>
+      <a href="#projects" data-hover>Projects</a>
+      <a href="#stack" data-hover>Stack</a>
     </div>
-    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+    <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span class="menu-bar"></span>
       <span class="menu-bar"></span>
     </button>
   </nav>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="mobile-menu">
-    <a href="#about" data-hover>[ About ]</a>
-    <a href="#projects" data-hover>[ Projects ]</a>
-    <a href="#stack" data-hover>[ Stack ]</a>
+  <div id="mobile-menu" class="mobile-menu" inert>
+    <a href="#about" data-hover>About</a>
+    <a href="#projects" data-hover>Projects</a>
+    <a href="#stack" data-hover>Stack</a>
   </div>
 
   <!-- Hero / Intro -->
   <header id="top" class="hero">
+    <canvas id="constellations" aria-hidden="true"></canvas>
     <div class="hero-overlay">
-      <div class="hero-tag reveal">
-        <span>MY PORTFOLIO SITE</span>
-      </div>
-
       <h1 class="hero-name reveal">
         SHREYANSH<br />
         <span class="hero-name-dim">PUROHIT</span>
@@ -68,13 +52,12 @@
       <div class="hero-divider reveal"></div>
 
       <p class="hero-tagline reveal">
-        <span id="typewriter" class="typewriter"></span><span class="type-cursor">_</span>
+        <span class="sr-only">build · break · learn · ship · repeat</span><span id="typewriter" aria-hidden="true">build · break · learn · ship · repeat</span><span class="type-cursor" aria-hidden="true">_</span>
       </p>
 
-      <div class="hero-scroll reveal" aria-hidden="true">
-        <span>Scroll in</span>
-        <span class="hero-scroll-arrow">↓</span>
-      </div>
+      <a class="hero-link" href="#projects">View projects
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6" /></svg>
+      </a>
     </div>
   </header>
 
@@ -84,19 +67,12 @@
   <main class="page-shift">
     <!-- About / Field notes -->
     <section id="about" class="section section-about">
-      <div class="section-label reveal">
-        <span class="section-rule"></span>
-        <span>// FIELD_NOTES · WHO I AM</span>
-      </div>
 
       <h2 class="section-title reveal">
-        ABOUT<br /><span class="dim">THE_BUILD</span>
+        About<br /><span class="dim">the build.</span>
       </h2>
 
       <div class="about-grid">
-        <div class="about-meta reveal">
-          <p class="about-meter">[ 01_I_AM ]</p>
-        </div>
         <div class="about-body reveal">
           <p class="lede">
             I build things. Then they break. Then I build them again — usually better.
@@ -120,14 +96,10 @@
 
     <!-- Projects -->
     <section id="projects" class="section section-projects">
-      <div class="section-label reveal">
-        <span class="section-rule"></span>
-        <span>// ARCHIVE · SHIPPED_WORK</span>
-      </div>
       <h2 class="section-title reveal">
-        STUFF<br /><span class="dim">I_MADE</span>
+        Stuff <span class="dim">I made.</span>
       </h2>
-      <p class="section-sub reveal">// not concepts. not coursework. things that exist.</p>
+      <p class="section-sub reveal">Things that exist. Built, broken, and built again.</p>
 
       <div class="projects-grid">
         <!-- Cards injected by script.js -->
@@ -136,17 +108,13 @@
 
     <!-- Stack -->
     <section id="stack" class="section section-stack">
-      <div class="section-label reveal">
-        <span class="section-rule"></span>
-        <span>// TOOLBELT · WHAT_I_USE</span>
-      </div>
       <h2 class="section-title reveal">
-        THE<br /><span class="dim">TOOLBELT</span>
+        The <span class="dim">toolbelt.</span>
       </h2>
 
       <div class="stack-grid reveal">
         <div class="stack-group">
-          <h3 class="stack-h">[ LANGUAGES ]</h3>
+          <h3 class="stack-h">Languages</h3>
           <ul class="stack-list">
             <li>Python</li>
             <li>Rust</li>
@@ -157,7 +125,7 @@
           </ul>
         </div>
         <div class="stack-group">
-          <h3 class="stack-h">[ FRAMEWORKS ]</h3>
+          <h3 class="stack-h">Frameworks</h3>
           <ul class="stack-list">
             <li>React</li>
             <li>Tailwind</li>
@@ -165,14 +133,14 @@
           </ul>
         </div>
         <div class="stack-group">
-          <h3 class="stack-h">[ HARDWARE ]</h3>
+          <h3 class="stack-h">Hardware</h3>
           <ul class="stack-list">
             <li>Arduino</li>
             <li>ESP32</li>
           </ul>
         </div>
         <div class="stack-group">
-          <h3 class="stack-h">[ TOOLS ]</h3>
+          <h3 class="stack-h">Tools</h3>
           <ul class="stack-list">
             <li>Git</li>
             <li>Linux</li>
@@ -186,12 +154,8 @@
 
     <!-- FAQ / Now playing -->
     <section id="now" class="section section-now">
-      <div class="section-label reveal">
-        <span class="section-rule"></span>
-        <span>// NOTES · THINGS PEOPLE ASK</span>
-      </div>
       <h2 class="section-title reveal">
-        QUESTIONS_<span class="dim">I_GET</span>
+        Questions <span class="dim">I get.</span>
       </h2>
 
       <div class="faq-list">
@@ -228,16 +192,6 @@
           </div></div>
         </div>
 
-        <div class="faq-item reveal" data-index="3">
-          <button class="faq-q" data-hover>
-            <span>[ 04 ] HOW MUCH DOES IT COST?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a"><div class="faq-a-inner">
-            Nothing if it is for learning. Curiosity is the entry fee; whatever you make is the
-            receipt.
-          </div></div>
-        </div>
       </div>
     </section>
 
@@ -250,6 +204,9 @@
             <span>&copy; <span id="year"></span> SHREYANSH_PUROHIT </span>
           </div>
         </div>
+        <a class="footer-link" href="https://github.com/shreyanshpurohit" target="_blank" rel="noopener noreferrer">GitHub
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg>
+        </a>
       </div>
     </footer>
   </main>

@@ -116,6 +116,7 @@ ul { list-style: none; }
 
 .hero {
   position: relative;
+  overflow: clip;
   height: 100vh;
   display: flex;
   align-items: center;

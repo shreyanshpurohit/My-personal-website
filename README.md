@@ -1,7 +1,9 @@
 # My Personal Site
 
-This is my personal website . I used HTML , CSS and JS to make it . It has some cool animations . I have showcased my other projects in it as well . It gives a good overview of my projects and skills.
+This is my personal website . I used HTML , CSS and JS to make it . It has a cool glyph background animations . I have showcased my projects in it as well . It tells about me , my projects and the tools I use :)
 
-<img width="1600" height="940" alt="image" src="https://github.com/user-attachments/assets/a25249cf-483c-4f7f-a323-31fab7f569ff" />
+## Landing Page 
+<img width="1702" height="1021" alt="image" src="https://github.com/user-attachments/assets/404d1f37-25c6-42ce-a835-fe31b09f3640" />
 
-<img width="1521" height="948" alt="image" src="https://github.com/user-attachments/assets/688ff16d-fac4-4817-a7d5-5ff4fda41f10" />
+## Projects Page
+<img width="1702" height="930" alt="image" src="https://github.com/user-attachments/assets/c06ace22-db66-4a7d-b246-3454ce14f1ea" />

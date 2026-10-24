@@ -1,208 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="I'm Shreyansh. I make websites, software, and hardware projects. Here are some of the things I've made.">
   <title>Shreyansh Purohit</title>
-  <meta
-    name="description"
-    content="Shreyansh Purohit - A tech enthusiast"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@400;500;600;700&family=Micro+5+Charted&family=Pixelify+Sans:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="dot-grid" aria-hidden="true"></div>
+  <canvas id="hover-dots" aria-hidden="true"></canvas>
 
-  <nav id="nav" class="nav">
-    <a href="#top" class="nav-logo" data-hover>
-      <span class="nav-logo-bracket">[</span>SP<span class="nav-logo-bracket">]</span>
-    </a>
-    <div class="nav-links">
-      <a href="#about" data-hover>About</a>
-      <a href="#projects" data-hover>Projects</a>
-      <a href="#stack" data-hover>Stack</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-identity">
+      <a class="brand-mark" href="#top" aria-label="Back to top">SP.</a>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-name">Shreyansh Purohit</span>
     </div>
-    <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="menu-bar"></span>
-      <span class="menu-bar"></span>
+    <div class="desktop-nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#stack">Stack</a>
+      <a class="github-button" href="https://github.com/shreyanshpurohit" target="_blank" rel="noopener noreferrer">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span>
     </button>
   </nav>
 
-  <div id="mobile-menu" class="mobile-menu" inert>
-    <a href="#about" data-hover>About</a>
-    <a href="#projects" data-hover>Projects</a>
-    <a href="#stack" data-hover>Stack</a>
+  <div class="mobile-nav" id="mobile-nav" inert>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#stack">Stack</a>
+    <a class="mobile-github" href="https://github.com/shreyanshpurohit" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
   </div>
 
-  <header id="top" class="hero">
-    <canvas id="constellations" aria-hidden="true"></canvas>
-    <div class="hero-overlay">
-      <h1 class="hero-name reveal">
-        SHREYANSH<br />
-        <span class="hero-name-dim">PUROHIT</span>
-      </h1>
-
-      <div class="hero-divider reveal"></div>
-
-      <p class="hero-tagline reveal">
-        <span class="sr-only">build · break · learn · ship · repeat</span><span id="typewriter" aria-hidden="true">build · break · learn · ship · repeat</span><span class="type-cursor" aria-hidden="true">_</span>
-      </p>
-
-      <a class="hero-link" href="#projects">View projects
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6" /></svg>
-      </a>
+  <header class="landing" id="top">
+    <div class="landing-inner">
+      <h1><span>SHREYANSH</span> <span>PUROHIT</span></h1>
+      <img class="hero-portrait" src="assets/batman-portrait.png" alt="Batman portrait" width="512" height="512">
     </div>
   </header>
 
-  <div class="hero-spacer" aria-hidden="true"></div>
-
-  <main class="page-shift">
-
-    <section id="about" class="section section-about">
-
-      <h2 class="section-title reveal">
-        About<br /><span class="dim">the build.</span>
-      </h2>
-
-      <div class="about-grid">
-        <div class="about-body reveal">
-          <p class="lede">
-            I build things. Then they break. Then I build them again — usually better.
-            Hardware, software, games, cursed prototypes, the kind of folder nobody asks for.
-            I do it because the first version is the only version that teaches you anything.
-          </p>
-          <p class="lede">
-            I am part of <em class="tag-inline tag-hack">HackHive</em> at Adarsh Public School.
-          </p>
-        </div>
-      </div>
-
-      <div class="stats reveal">
-        <div class="stat"><span class="stat-value">∞</span><span class="stat-label">Broken Builds</span></div>
-        <div class="stat"><span class="stat-value">2026</span><span class="stat-label">Started Shipping</span></div>
-        <div class="stat"><span class="stat-value">100%</span><span class="stat-label">Self-Taught</span></div>
-        <div class="stat"><span class="stat-value">0</span><span class="stat-label">Spectator Mode</span></div>
+  <main>
+    <section class="content-section aboutme-section" id="about">
+      <h2>About me</h2>
+      <div class="aboutme-copy">
+        <p>
+          I'm Shreyansh. A guy who likes to code and make new things. I like to learn about new technologies and how to use them. I also like to do CTFs and reverse engineering things. I have made some cool projects that you can check out !!  
+        </p>
+        <p>I'm also part of <a href="https://hackhive.tech" target="_blank" rel="noopener noreferrer">HackHive</a>, the Hack Club at Adarsh Public School.</p>
       </div>
     </section>
 
-    <section id="projects" class="section section-projects">
-      <h2 class="section-title reveal">
-        Stuff <span class="dim">I made.</span>
-      </h2>
-      <p class="section-sub reveal">Things that exist. Built, broken, and built again.</p>
-
-      <div class="projects-grid">
-
+    <section class="content-section work-section" id="projects">
+      <h2>Projects</h2>
+      <div class="work-list">
+        <article class="project">
+          <a href="https://hackhive.tech" target="_blank" rel="noopener noreferrer">
+            <img src="assets/hackhive.png" alt="HackHive website screenshot" width="960" height="600" loading="lazy">
+            <h3>HackHive <span aria-hidden="true">↗</span></h3>
+          </a>
+          <p>The website I made for our school's Hack Club.</p>
+        </article>
+        <article class="project">
+          <a href="https://github.com/shreyanshpurohit/astronomy-apod" target="_blank" rel="noopener noreferrer">
+            <img src="assets/astronomy-apod.webp" alt="Astronomy APOD start page screenshot" width="960" height="600" loading="lazy">
+            <h3>Astronomy APOD <span aria-hidden="true">↗</span></h3>
+          </a>
+          <p>A start page with NASA's daily astronomy photo, search, and shortcuts to your favourite sites.</p>
+        </article>
+        <article class="project">
+          <a href="https://github.com/shreyanshpurohit/SPOS" target="_blank" rel="noopener noreferrer">
+            <img src="assets/SPOS.png" alt="SPOS WebOS screenshot" width="960" height="600" loading="lazy">
+            <h3>SPOS <span aria-hidden="true">↗</span></h3>
+          </a>
+          <p>A simple OS-style desktop that runs in your browser.</p>
+        </article>
+        <article class="project">
+          <a href="https://github.com/shreyanshpurohit/blade" target="_blank" rel="noopener noreferrer">
+            <img src="assets/blade.webp" alt="Blade browser screenshot" width="960" height="600" loading="lazy">
+            <h3>Blade <span aria-hidden="true">↗</span></h3>
+          </a>
+          <p>A browser I made with Electron and React. It has Chromium tabs, bookmarks, and browsing history.</p>
+        </article>
       </div>
     </section>
 
-    <section id="stack" class="section section-stack">
-      <h2 class="section-title reveal">
-        The <span class="dim">toolbelt.</span>
-      </h2>
-
-      <div class="stack-grid reveal">
-        <div class="stack-group">
-          <h3 class="stack-h">Languages</h3>
-          <ul class="stack-list">
-            <li>Python</li>
-            <li>Rust</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>C / C++</li>
-            <li>HTML · CSS</li>
+    <section class="content-section skills-section" id="stack">
+      <h2>What I use</h2>
+      <div class="skills-grid">
+        <div class="skills-column">
+          <h3>Languages</h3>
+          <ul>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/python.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>Python</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/javascript.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>JavaScript</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/typescript.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>TypeScript</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/c.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>C</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/cplusplus.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>C++</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/html5.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>HTML</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/css.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>CSS</span>
+            </li>
           </ul>
         </div>
-        <div class="stack-group">
-          <h3 class="stack-h">Frameworks</h3>
-          <ul class="stack-list">
-            <li>React</li>
-            <li>Tailwind</li>
-            <li>Node</li>
+        <div class="skills-column">
+          <h3>Hardware</h3>
+          <ul>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/arduino.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>Arduino</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/espressif.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>ESP32</span>
+            </li>
           </ul>
         </div>
-        <div class="stack-group">
-          <h3 class="stack-h">Hardware</h3>
-          <ul class="stack-list">
-            <li>Arduino</li>
-            <li>ESP32</li>
-          </ul>
-        </div>
-        <div class="stack-group">
-          <h3 class="stack-h">Tools</h3>
-          <ul class="stack-list">
-            <li>Git</li>
-            <li>Linux</li>
-            <li>Neovim</li>
-            <li>Godot</li>
-            <li>Fusion 360</li>
+        <div class="skills-column">
+          <h3>Tools</h3>
+          <ul>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/git.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>Git</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/linux.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>Linux</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/vscode.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>VS Code</span>
+            </li>
+            <li>
+              <span class="skill-logos" aria-hidden="true">
+                <img src="assets/logos/godotengine.svg" alt="" width="24" height="24" loading="lazy">
+              </span>
+              <span>Godot</span>
+            </li>
           </ul>
         </div>
       </div>
     </section>
-
-    <section id="now" class="section section-now">
-      <h2 class="section-title reveal">
-        Questions <span class="dim">I get.</span>
-      </h2>
-
-      <div class="faq-list">
-        <div class="faq-item reveal" data-index="0">
-          <button class="faq-q" data-hover>
-            <span>[ 01 ] WHAT ARE YOU?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a"><div class="faq-a-inner">
-            A student. A builder. A vice president of HackHive. I show up with strange ideas,
-            ship the ugly first version, and leave with something that works a little better than
-            it did yesterday.
-          </div></div>
-        </div>
-
-        <div class="faq-item reveal" data-index="1">
-          <button class="faq-q" data-hover>
-            <span>[ 02 ] DO YOU TAKE AI-GENERATED CODE?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a"><div class="faq-a-inner">
-            As a power tool, not an autopilot. I read what it ships, I fix what breaks, and I can
-            explain the build without hiding behind a prompt.
-          </div></div>
-        </div>
-
-        <div class="faq-item reveal" data-index="2">
-          <button class="faq-q" data-hover>
-            <span>[ 03 ] DO I NEED TO BE AN EXPERT?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a"><div class="faq-a-inner">
-            No. Experts are just beginners with a longer failure history.
-          </div></div>
-        </div>
-
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-name">SHREYANSH PUROHIT</div>
-          <div class="footer-meta">
-            <span>&copy; <span id="year"></span> SHREYANSH_PUROHIT </span>
-          </div>
-        </div>
-        <a class="footer-link" href="https://github.com/shreyanshpurohit" target="_blank" rel="noopener noreferrer">GitHub
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg>
-        </a>
-      </div>
-    </footer>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>

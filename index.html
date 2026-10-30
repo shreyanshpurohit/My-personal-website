@@ -9,26 +9,27 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@400;500;600;700&family=Micro+5+Charted&family=Pixelify+Sans:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="assets/moon-landscape.png">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="dot-grid" aria-hidden="true"></div>
-  <canvas id="hover-dots" aria-hidden="true"></canvas>
+  <div class="moon-backdrop" aria-hidden="true">
+    <div class="moon-plate"><img src="assets/moon-landscape.png" alt="" width="1672" height="941"></div>
+  </div>
+  <canvas id="star-field" aria-hidden="true"></canvas>
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-identity">
-      <a class="brand-mark" href="#top" aria-label="Back to top">SP.</a>
-      <span class="brand-divider" aria-hidden="true"></span>
-      <span class="brand-name">Shreyansh Purohit</span>
+      <a class="brand-name" href="#top" aria-label="Shreyansh Purohit, back to top">Shreyansh Purohit</a>
     </div>
     <div class="desktop-nav">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#stack">Stack</a>
-      <a class="github-button" href="https://github.com/shreyanshpurohit" target="_blank" rel="noopener noreferrer">
-        GitHub <span aria-hidden="true">↗</span>
+      <a class="github-button" aria-label="Shreyansh on GitHub" href="https://github.com/shreyanshpurohit" target="_blank" rel="noopener noreferrer">
+        <img src="assets/logos/github.svg" alt="" width="26" height="26">
       </a>
     </div>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -44,9 +45,14 @@
   </div>
 
   <header class="landing" id="top">
-    <div class="landing-inner">
-      <h1><span>SHREYANSH</span> <span>PUROHIT</span></h1>
-      <img class="hero-portrait" src="assets/batman-portrait.png" alt="Batman portrait" width="512" height="512">
+    <div class="tv-scene">
+      <div class="tv-set">
+        <img class="tv-hardware" src="assets/tv.png" alt="" width="1536" height="1024" fetchpriority="high">
+        <div class="tv-display">
+          <img class="tv-wallpaper" src="assets/moon-landscape.png" alt="" width="1672" height="941">
+          <h1 aria-label="Shreyansh Purohit"><span>Shreyansh</span><span>Purohit</span></h1>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -55,7 +61,7 @@
       <h2>About me</h2>
       <div class="aboutme-copy">
         <p>
-          I'm Shreyansh. A guy who likes to code and make new things. I like to learn about new technologies and how to use them. I also like to do CTFs and reverse engineering things. I have made some cool projects that you can check out !!  
+          I'm Shreyansh. A guy who likes to code and make new things. I like to learn about new technologies and how to use them. I also like to do CTFs and reverse engineering things. I have made some cool projects that you can check out !!
         </p>
         <p>I'm also part of <a href="https://hackhive.tech" target="_blank" rel="noopener noreferrer">HackHive</a>, the Hack Club at Adarsh Public School.</p>
       </div>
@@ -65,32 +71,40 @@
       <h2>Projects</h2>
       <div class="work-list">
         <article class="project">
-          <a href="https://hackhive.tech" target="_blank" rel="noopener noreferrer">
+          <a class="project-link" href="https://hackhive.tech" target="_blank" rel="noopener noreferrer">
             <img src="assets/hackhive.png" alt="HackHive website screenshot" width="960" height="600" loading="lazy">
-            <h3>HackHive <span aria-hidden="true">↗</span></h3>
+            <div class="project-copy">
+              <h3>HackHive</h3>
+              <p>The website I made for our school's Hack Club.</p>
+            </div>
           </a>
-          <p>The website I made for our school's Hack Club.</p>
         </article>
         <article class="project">
-          <a href="https://github.com/shreyanshpurohit/astronomy-apod" target="_blank" rel="noopener noreferrer">
+          <a class="project-link" href="https://github.com/shreyanshpurohit/astronomy-apod" target="_blank" rel="noopener noreferrer">
             <img src="assets/astronomy-apod.webp" alt="Astronomy APOD start page screenshot" width="960" height="600" loading="lazy">
-            <h3>Astronomy APOD <span aria-hidden="true">↗</span></h3>
+            <div class="project-copy">
+              <h3>Astronomy APOD</h3>
+              <p>A start page with NASA's daily astronomy photo, search, and shortcuts to your favourite sites.</p>
+            </div>
           </a>
-          <p>A start page with NASA's daily astronomy photo, search, and shortcuts to your favourite sites.</p>
         </article>
         <article class="project">
-          <a href="https://github.com/shreyanshpurohit/SPOS" target="_blank" rel="noopener noreferrer">
+          <a class="project-link" href="https://github.com/shreyanshpurohit/SPOS" target="_blank" rel="noopener noreferrer">
             <img src="assets/SPOS.png" alt="SPOS WebOS screenshot" width="960" height="600" loading="lazy">
-            <h3>SPOS <span aria-hidden="true">↗</span></h3>
+            <div class="project-copy">
+              <h3>SPOS</h3>
+              <p>A simple OS-style desktop that runs in your browser.</p>
+            </div>
           </a>
-          <p>A simple OS-style desktop that runs in your browser.</p>
         </article>
         <article class="project">
-          <a href="https://github.com/shreyanshpurohit/blade" target="_blank" rel="noopener noreferrer">
+          <a class="project-link" href="https://github.com/shreyanshpurohit/blade" target="_blank" rel="noopener noreferrer">
             <img src="assets/blade.webp" alt="Blade browser screenshot" width="960" height="600" loading="lazy">
-            <h3>Blade <span aria-hidden="true">↗</span></h3>
+            <div class="project-copy">
+              <h3>Blade</h3>
+              <p>A browser I made with Electron and React. It has Chromium tabs, bookmarks, and browsing history.</p>
+            </div>
           </a>
-          <p>A browser I made with Electron and React. It has Chromium tabs, bookmarks, and browsing history.</p>
         </article>
       </div>
     </section>
@@ -191,6 +205,13 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="content-section secret-section" id="secret">
+      <h2>You got rickrolled !!</h2>
+      <div class="secret-player">
+        <img id="secret-gif" src="assets/rickroll.gif"  width="640" height="360" loading="lazy">
       </div>
     </section>
   </main>
